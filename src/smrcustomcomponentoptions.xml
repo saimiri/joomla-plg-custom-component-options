@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3" type="plugin" group="content" method="upgrade" client="administrator">
+	<name>plg_content_smr_custom_component_options</name>
+	<author>Juha Auvinen / Saimiri Design</author>
+	<creationDate>2016-05-03</creationDate>
+	<copyright>(C) 2016 Saimiri Design. All rights reserved.</copyright>
+	<license>Apache 2.0; see LICENSE.txt</license>
+	<authorEmail>juha@saimiri.fi</authorEmail>
+	<authorUrl>www.github.com/saimiri</authorUrl>
+	<version>1.0.0.15</version>
+	<description>SMR_CCO_DESC</description>
+	<scriptfile>script.php</scriptfile>
+	<files>
+		<filename plugin="smrcustomcomponentoptions">smrcustomcomponentoptions.php</filename>
+		<filename>index.html</filename>
+		<folder>forms</folder>
+		<folder>language</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="fieldset_title" type="text" default="SMR_CCO_FIELDSET_DEFAULT_TITLE" label="SMR_CCO_FIELDSET_TITLE" filter="string" translate_default="true" />
+				<field name="field_list" type="repeatable" label="SMR_CCO_EXTRA_FIELD_LIST" icon="list" default="">
+					<fieldset hidden="true" name="option_list_modal" repeat="true">
+						<field name="field_components" type="list" label="SMR_CCO_FIELD_COMPONENT" multiple="true">
+							<option value="com_menus">com_menus</option>
+							<option value="com_content">com_content</option>
+						</field>
+						<field name="field_names" type="text" label="SMR_CCO_FIELD_NAME" />
+						<field name="field_labels" type="text" label="SMR_CCO_FIELD_LABEL" />
+						<field name="field_types" type="list" label="SMR_CCO_FIELD_TYPE">
+							<option value="text">SMR_CCO_FIELD_TEXT</option>
+							<option value="integer">SMR_CCO_FIELD_INTEGER</option>
+							<option value="textarea">SMR_CCO_FIELD_TEXTAREA</option>
+							<option value="radio">SMR_CCO_FIELD_RADIO</option>
+							<option value="checkbox">SMR_CCO_FIELD_CHECKBOX</option>
+							<option value="list">SMR_CCO_FIELD_LIST</option>
+							<option value="calendar">SMR_CCO_FIELD_CALENDAR</option>
+						</field>
+						<field name="field_options" type="textarea" label="SMR_CCO_FIELD_OPTIONS" />
+						<field name="field_default_values" type="text" label="SMR_CCO_FIELD_DEFAULT_VALUE" />
+					</fieldset>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
